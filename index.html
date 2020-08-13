@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Worldwide COVID-19</title>
+
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    
+<div class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-center">
+        <p class="uk-navbar-item uk-logo">Worldwide COVID-19</p>
+    </div>
+</div>
+<div class="uk-container-expand">
+    <div class="hero">
+        </div>        
+        <div class="drop">
+            <form class="uk-search uk-search-default">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="search by country">
+            </form>
+        </div>
+        <div class="location">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                    
+                    <!--graph goes here-->
+                    <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Country</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                    <!--graph goes here-->
+                    <canvas width="600" height="400"></canvas>
+                    
+                </div>
+                <div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">World</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="news">
+            
+            <dl class="uk-description-list uk-description-list-divider">
+               <h2>
+                In the News
+            </h2> 
+            <!--fake titles to demonstrate how it SHOULD look-->
+                <dt></dt>
+                <dd>Puppies, Kitties "Probably Immune," says Some Guy in a Suit.</dd>
+                <dt></dt>
+                <dd>North Korea Reports Zero Cases, Which is Definitely True and Accurate. </dd>
+                <dt></dt>
+                <dd>Top Ten COVID-19 Preventing Lifehacks.</dd>
+                <dt></dt>
+                <dd>New Evidence Suggests that Toilet Paper Shortage was Related to COVID-19 panic.</dd>
+                <dt></dt>
+            </dl>               
+        </div>
+        <div class="footer">footer</div>
+      </div>
 </body>
+
 </html>
