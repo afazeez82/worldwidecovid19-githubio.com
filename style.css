@@ -1,0 +1,45 @@
+.uk-container-expand {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "hero hero hero"
+    "drop location news"
+    "drop location news"
+    "footer footer footer";
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 1fr 80px;
+  }
+  .uk-container-expand > div {
+    border: 1px dashed #888;
+  }
+  
+  .hero {
+    grid-area: hero;
+    background-image: url("./assets/world.jpg");
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+  }
+  .drop {
+    grid-area: drop;
+  }
+  .location {
+    grid-area: location;
+  }
+  .news {
+    grid-area: news;
+  }
+  .footer {
+    grid-area: footer;
+  }
+
+  h2 {
+      text-align: center;
+  }
+
+ .uk-card {
+      
+  }
