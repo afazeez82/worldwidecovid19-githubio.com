@@ -48,7 +48,7 @@ $.ajax(settings).done(function (response) {
     }    
     
     appendStorage();
-
+    chartInfo();
 });
 
 
@@ -126,25 +126,25 @@ $('#search-countries').on('submit', function(e){
 
 function chartInfo() {
     // var keyIndex = localStorage.length - 1;
-    var cases = localStorage.getItem("global");
+    var cases = JSON.parse(localStorage.getItem("global"));
     
-    newCases = JSON.parse(cases);
-    console.log(newCases);
+    
+    console.log(cases);
     // newCases = Array.from(cases);
     // console.log(newCases);
-    var confirmed = newCases[0];
-    console.log('confirmed ' + confirmed);
+    var confirmed = cases[0].confirmed;
+    console.log('confirmed ' + confirmed.toLocaleString());
     var critical = cases[0].critical; 
     var deaths = cases[0].deaths; 
     var recoveries = cases[0].recovered; 
     var chart = $('#global-chart');
     var myChart = new Chart(chart, {
-    type: 'bar',
+    type: 'horizontalBar',
     data: {
         labels: ['Confirmed', 'Critical', 'Deaths', 'Recovered'],
         datasets: [{
-            label: '# of Cases',
-            data: [`${confirmed}, ${critical}, ${deaths}, ${recoveries}`],
+            label: '# of Cases Worldwide',
+            data: [confirmed, critical, deaths, recoveries],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -173,5 +173,6 @@ function chartInfo() {
 });
 }
 
-chartInfo();
+
+    
 //-----
