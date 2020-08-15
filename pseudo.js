@@ -1,4 +1,10 @@
-/*
+$(document).ready(function(){
+
+// url: https://covid-19-data.p.rapidapi.com/country?format=json&name=" + countryName,
+
+
+
+});
 //      Javascript Pseudocode
 // This program utilizes two server - side API keys to gather COVID - 19 related data concerning { city, country, etc.}
 // var city
@@ -30,3 +36,11 @@
 //         [<a href=“https://twitter.com/intent/tweet?button_hashtag=COVID&ref_src=twsrc%5Etfw”
 //             class=“twitter-hashtag-button” data-show-count=“false”> Tweet #COVID</a>
 //             <script async src=“https://platform.twitter.com/widgets.js” charset=“utf-8”></script>]
+
+
+
+
+
+
+
+

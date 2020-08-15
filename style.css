@@ -1,46 +1,78 @@
 .uk-container-expand {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-areas: "hero hero hero"
-    "drop location news"
-    "drop location news"
-    "footer footer footer";
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 1fr 80px;
-  }
-  .uk-container-expand > div {
-    border: 1px dashed #888;
-  }
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "hero hero hero"
+  "drop location news"
+  "drop location news"
+  "footer footer footer";
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr 80px;
+}
+.uk-container-expand > div {
+  border: 1px solid #A1B3B1;
+}
+
+.hero {
+  grid-area: hero;
+  background-image: url("./assets/world.jpg");
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+}
+.drop {
+  grid-area: drop;
+  background-color: #BFC2FF;
+  font-family: 'Heebo', sans-serif;
   
-  .hero {
-    grid-area: hero;
-    background-image: url("./assets/world.jpg");
-    background-repeat:no-repeat;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-    background-position:center;
-  }
-  .drop {
-    grid-area: drop;
-  }
-  .location {
-    grid-area: location;
-  }
-  .news {
-    grid-area: news;
-  }
-  .footer {
-    grid-area: footer;
+  
+}
+.location {
+  grid-area: location;
+  background-color: #FFEBCD;
+  
+  
+}
+.news {
+  grid-area: news;
+  background-color: #BFC2FF;
+  font-family: 'Heebo', sans-serif;
+  color: black    
+  
+}
+.footer {
+  grid-area: footer;
+  background-color:#B34C4B;
+  text-align: center;
+  
+}
+
+h2 {
     text-align: center;
-  }
+    font-family: 'Heebo', sans-serif;
+}
 
-  h2 {
-      text-align: center;
-  }
+.uk-card {
+background-color: #FFEBCD;
+font-family: 'Heebo', sans-serif;
+color: black
+} 
+#header {
+  background-color:#B34C4B !important;
+  
+}
+.uk-logo {
+font-weight: bold;
+font-family: 'Heebo', sans-serif;
+color: black !important;
+font-size: 50px !important;
+}
 
- .uk-card {
-      
-  }
+.uk-search-input {
+text-align: center !important;
+background-color: snow !important;
+color: slategray !important;
+}
