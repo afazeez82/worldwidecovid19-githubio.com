@@ -1,4 +1,4 @@
-
+<!--
 //      Javascript Pseudocode
 // This program utilizes two server - side API keys to gather COVID - 19 related data concerning { city, country, etc.}
 // var city
