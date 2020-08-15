@@ -2,13 +2,12 @@
 moment().format('L');
 
 
-function loadStorage() {
-    if (localStorage.getItem("global_0" != null)) {
-        var keyIndex = localStorage.length - 1;
-        console.log(localStorage.getItem("global_" + keyIndex ))
-    }
-}
-
+// function loadStorage() {
+//     if (localStorage.getItem("global" != null)) {
+//         // var keyIndex = localStorage.length - 1;
+//         console.log(localStorage.getItem("global")
+//     }
+// }
 
 
 //Calling(integrating) the totals api
@@ -45,7 +44,7 @@ $.ajax(settings).done(function (response) {
     function appendStorage()
     {
         var keys = Object.keys(localStorage);
-        localStorage.setItem('global_' + keys.length, JSON.stringify(response) )
+        localStorage.setItem('global', JSON.stringify(response) )
     }    
     
     appendStorage();
@@ -76,7 +75,9 @@ $('#search-countries').on('submit', function(e){
         
         $.ajax(settingsCountry).done(function (response) {
         console.log(response);
-
+            //ISCODE HERE
+        var countryCode = (response[0].code);
+        console.log(countryCode);
         $("#country-data").empty();
         var countryHeaderEl = $("<h3>" + countryName + "</h3>");
         var countryConfirmedCasesEl = $("<p>").text("Confirmed: " + response[0].confirmed);
@@ -87,10 +88,12 @@ $('#search-countries').on('submit', function(e){
         $("#country-data").html(newDiv);
 
 
+
+        //latest country news
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://covid-19-news.p.rapidapi.com/v1/covid?lang=en&media=True&country="+ countryName +"&q=covid",
+            "url": "https://covid-19-news.p.rapidapi.com/v1/covid?lang=en&media=True&country="+ countryCode +"&q=covid",
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "covid-19-news.p.rapidapi.com",
@@ -100,9 +103,16 @@ $('#search-countries').on('submit', function(e){
         
         $.ajax(settings).done(function (response) {
             console.log(response);
+            console.log(response.articles[0].link);
+            console.log(response.articles[0].summary)
+
+            $("#news-articles").em
+            var article1El = $("<p>").text(response.articles[0].summary)
+            var newDivArticle = $('<div>');
+
+            
         });
         
-
         
 
     });
@@ -115,32 +125,38 @@ $('#search-countries').on('submit', function(e){
 
 
 function chartInfo() {
-    var keyIndex = localStorage.length - 1;
-    var confirmed = localStorage.getItem("global_" + keyIndex);
-    confirmed 
+    // var keyIndex = localStorage.length - 1;
+    var cases = localStorage.getItem("global");
+    
+    newCases = JSON.parse(cases);
+    console.log(newCases);
+    // newCases = Array.from(cases);
+    // console.log(newCases);
+    var confirmed = newCases[0];
+    console.log('confirmed ' + confirmed);
+    var critical = cases[0].critical; 
+    var deaths = cases[0].deaths; 
+    var recoveries = cases[0].recovered; 
     var chart = $('#global-chart');
     var myChart = new Chart(chart, {
     type: 'bar',
     data: {
-        labels: [, 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Confirmed', 'Critical', 'Deaths', 'Recovered'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# of Cases',
+            data: [`${confirmed}, ${critical}, ${deaths}, ${recoveries}`],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(75, 192, 192, 0.2)'
+                
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
         }]
