@@ -10,7 +10,7 @@
     grid-template-rows: 1fr 1fr 80px;
   }
   .uk-container-expand > div {
-    border: 1px dashed #888;
+    border: 1px solid #A1B3B1;
   }
   
   .hero {
@@ -25,21 +25,56 @@
   }
   .drop {
     grid-area: drop;
+    background-color: #BFC2FF;
+    font-family: 'Heebo', sans-serif;
+    
+    
   }
   .location {
     grid-area: location;
+    background-color: #FFEBCD;
+    
+    
   }
   .news {
     grid-area: news;
+    background-color: #BFC2FF;
+    font-family: 'Heebo', sans-serif;
+    color: black    
+    
   }
   .footer {
     grid-area: footer;
+    background-color:#B34C4B;
+    border-top: 10px solid #BFC2FF;
+    text-align: center;
+    
   }
 
   h2 {
       text-align: center;
+      font-family: 'Heebo', sans-serif;
   }
 
- .uk-card {
-      
+
+.uk-card {
+  background-color: #FFEBCD;
+  font-family: 'Heebo', sans-serif;
+  color: black
+} 
+#header {
+    background-color:#B34C4B !important;
+    
   }
+.uk-logo {
+  font-weight: bold;
+  font-family: 'Heebo', sans-serif;
+  color: black !important;
+  font-size: 50px !important;
+}
+
+.uk-search-input {
+  text-align: center !important;
+  background-color: snow !important;
+  color: slategray !important;
+}

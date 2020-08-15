@@ -14,10 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
 </head>
-<div class="uk-navbar-container" uk-navbar>
+<div class="uk-navbar-container uk-navbar" id= "header">
     <div class="uk-navbar-center">
-        <p class="uk-navbar-item uk-logo">Worldwide COVID-19</p>
+        <p class="uk-navbar-item uk-logo"><img src="./assets/WWClogo.png" alt="Worldwide COVID-19 Logo"></p>
     </div>
 </div>
 <div class="uk-container-expand">
@@ -26,9 +27,12 @@
         <div class="drop">
             <form class="uk-search uk-search-default">
                 <span uk-search-icon></span>
-                <input class="uk-search-input" type="search" placeholder="search by country">
+                <input class="uk-search-input" type="search" placeholder="Search by country">
             </form>
+            <br>
+            <!--previous searched should go here-->
         </div>
+        
         <div class="location">
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                 <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
@@ -39,7 +43,11 @@
                 <div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title">Country</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <ul>
+                            <li>Confirmed: <span></span></li>
+                            <li>Deaths: <span></span></li>
+                            <li>Recovered: <span></span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -53,7 +61,11 @@
                 <div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title">World</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <ul>
+                            <li>Confirmed: <span></span></li>
+                            <li>Deaths: <span></span></li>
+                            <li>Recovered: <span></span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -77,9 +89,41 @@
                 <dt></dt>
             </dl>               
         </div>
-        <div class="footer">footer</div>
+        <div class="footer">
+            
+            <!-- You can use Open Graph tags to customize link previews.
+            Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+            <meta property="og:url"           content="https://afazeez82.github.io/worldwidecovid19-githubio.com/" />
+            <meta property="og:type"          content="website" />
+            <meta property="og:title"         content="COVID-19 Worldwide tracker" />
+            <meta property="og:description"   content="Track COVID-19 cases by country" />
+            <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+            
+            
+            <!-- Load Facebook SDK for JavaScript -->
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            
+            <!-- Your share button code -->
+            <div class="fb-share-button" 
+            data-href="https://afazeez82.github.io/worldwidecovid19-githubio.com/" 
+            data-layout="button_count">
+            </div>
+            
+            <!--twitter button-->
+            
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
       </div>
       <script type="text/javascript" src="Script.js"></script>
+      
 </body>
 
 </html>
