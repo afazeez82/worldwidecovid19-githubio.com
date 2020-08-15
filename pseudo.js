@@ -1,3 +1,18 @@
+$(document).ready(function(){
+
+// url: https://covid-19-data.p.rapidapi.com/country?format=json&name=" + countryName,
+
+
+
+});
+
+
+
+
+
+
+
+
 <!--
 //      Javascript Pseudocode
 // This program utilizes two server - side API keys to gather COVID - 19 related data concerning { city, country, etc.}
