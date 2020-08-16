@@ -44,7 +44,8 @@ $.ajax(settings).done(function (response) {
     function appendStorage()
     {
         var keys = Object.keys(localStorage);
-        localStorage.setItem('global', JSON.stringify(response) )
+        var keysIndex = keys.length
+        localStorage.setItem('global', JSON.stringify(response))
     }    
     
     appendStorage();
@@ -87,6 +88,13 @@ $('#search-countries').on('submit', function(e){
         newDiv.append(countryHeaderEl, countryConfirmedCasesEl, countryCriticalEl, countryDeathsEl);
         $("#country-data").html(newDiv);
 
+            //Add current search to localStorage
+            var keys = Object.keys(localStorage)
+            var keysIndex = keys.length - 1;
+            localStorage.setItem('country_' + keysIndex, JSON.stringify(response))
+            console.log(localStorage.getItem('country_0'))
+            console.log('above is country')
+            //add button with last search parameters (if value returned is not equal to null)
 
 
         //latest country news
@@ -111,6 +119,7 @@ $('#search-countries').on('submit', function(e){
             var newDivArticle = $('<div>');
 
             
+            
         });
         
         
@@ -125,9 +134,12 @@ $('#search-countries').on('submit', function(e){
 
 
 function chartInfo() {
-    // var keyIndex = localStorage.length - 1;
+    var keys = Object.keys(localStorage);
+    var keysIndex = keys.length - 2
+    console.log(keysIndex)
+    var countryStorage = localStorage.getItem('country_' + keysIndex);
     var cases = JSON.parse(localStorage.getItem("global"));
-    
+    console.log(JSON.parse(countryStorage));
     
     console.log(cases);
     // newCases = Array.from(cases);
