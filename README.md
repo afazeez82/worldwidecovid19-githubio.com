@@ -15,7 +15,7 @@ The html, css, and script files are all in the same folder. If they're kept in t
 
 ## Resources
 Twitter widget
-#"https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"
+("https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
 
 API resources
 
