@@ -59,18 +59,18 @@ h2 {
 background-color: #FFEBCD;
 font-family: 'Heebo', sans-serif;
 color:ablack
-} ;
+} 
 #header {
-  backgro
-;; 
+  background-color: #B34C4B;
 width: 100%;
+}
 
-}
-font-weight: bold;
-font-family: 'Heebo', sans-serif;
-color: black !important;
-font-size: 50px !important;
-}
+.uk-logo {
+  font-weight: bold;
+  font-family: 'Heebo', sans-serif;
+  color: black !important;
+  font-size: 50px !important;
+  }
 
 .uk-search-input {
 text-align: center !important;
