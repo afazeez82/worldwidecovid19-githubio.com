@@ -16,8 +16,12 @@ The html, css, and script files are all in the same folder. If they're kept in t
  ![Full Page Display](./Assets/fullpage.png)
 
 
+## Resources
+Twitter widget
 
-
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Twitter Widget</a>
+            <script async src="https://platform.twitter.com/widgets.js"
+            </div></div>
 
 ## Credits
 This assignment is provided by Trilogy Education Services. CSS and Skeletal HTML was provided by Trilogy Education Services. Code was structured based on in class activities and lectures, [MDN](https://developer.mozilla.org/en-US/) Reference Documents for JavaScript syntax, [JSHint](https://jshint.com/) for JavaScript validation, and various other online resources. 
