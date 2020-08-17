@@ -1,5 +1,5 @@
 //adding the moment library for dates
-moment().format('L');
+var currentDate = moment().format('L');
 
 
 // function loadStorage() {
@@ -31,12 +31,15 @@ function searchCountryName(countryName) {
         var countryCode = (response[0].code);
         console.log(countryCode);
         $("#country-data").empty();
+        var dateEl = $("<p>");
+        var countryDisplayCurrentDate = dateEl.append("Date: " + currentDate);
         var countryHeaderEl = $("<h3>" + countryName + "</h3>");
         var countryConfirmedCasesEl = $("<p>").text("Confirmed: " + response[0].confirmed);
         var countryCriticalEl = $("<p>").text("Critical: " + response[0].critical);
         var countryDeathsEl = $("<p>").text("Deaths: " + response[0].deaths);
+        var countryRecoveredEl = $("<p>").text("Recovered: " + response[0].recovered);
         var newDiv = $('<div>');
-        newDiv.append(countryHeaderEl, countryConfirmedCasesEl, countryCriticalEl, countryDeathsEl);
+        newDiv.append(countryHeaderEl, countryDisplayCurrentDate, countryConfirmedCasesEl, countryCriticalEl, countryDeathsEl, countryRecoveredEl);
         $("#country-data").html(newDiv);
 
         //Add current search to localStorage
@@ -97,8 +100,7 @@ var settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
     // $("#world").empty();
-  
-    var currentDate = moment().format('L');
+
     var dateEl = $("<p>");
     var worldHeaderEl = $("<h3> World Data </h3>");
 
@@ -106,8 +108,9 @@ $.ajax(settings).done(function (response) {
     var confirmedCaseEl = $("<p>").text("Confirmed: " + response[0].confirmed);
     var criticalCaseEl = $("<p>").text("Critical: " + response[0].critical);
     var totalDeathsEl = $("<p>").text("Deaths: " + response[0].deaths);
+    var totalRecoveredEl = $("<p>").text("Recovered: " + response[0].recovered);
     var newDiv = $('<div>');
-    newDiv.append(worldHeaderEl, displayCurrentDate, confirmedCaseEl, criticalCaseEl, totalDeathsEl );
+    newDiv.append(worldHeaderEl, displayCurrentDate, confirmedCaseEl, criticalCaseEl, totalDeathsEl, totalRecoveredEl );
     $("#world").html(newDiv);
 
     function appendStorage()
@@ -215,6 +218,14 @@ var countryRecovered = cases[0].recovered;
 
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
+    onAnimationComplete: function () {
+
+        var ctx = this.chart.ctx;
+        ctx.font = this.scale.font;
+        ctx.fillStyle = this.scale.textColor
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+    },
     data: {
         labels: ['Confirmed', 'Critical', 'Deaths', 'Recovered'],
         datasets: [{
@@ -236,6 +247,7 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         }]
+    
     },
     options: {
         scales: {
