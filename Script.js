@@ -19,10 +19,7 @@ var settings = {
 	"headers": {
 		"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
         "x-rapidapi-key": "839906499fmsh2b527dd8c5ac97dp144417jsnd5fa3c686fd1",
-        
-       
     }
-    
 }
 
 $.ajax(settings).done(function (response) {
@@ -88,14 +85,18 @@ $('#search-countries').on('submit', function(e){
         newDiv.append(countryHeaderEl, countryConfirmedCasesEl, countryCriticalEl, countryDeathsEl);
         $("#country-data").html(newDiv);
 
-            //Add current search to localStorage
-            var keys = Object.keys(localStorage)
-            var keysIndex = keys.length - 1;
-            localStorage.setItem('country_' + keysIndex, JSON.stringify(response))
-            console.log(localStorage.getItem('country_0'))
-            console.log('above is country')
-            //add button with last search parameters (if value returned is not equal to null)
-
+        //Add current search to localStorage
+        var keys = Object.keys(localStorage)
+        var keysIndex = keys.length - 1;
+        localStorage.setItem(countryName, JSON.stringify(response));
+        
+        
+        
+         
+        var historicalLI = $(`<li>${countryName}</li>`);
+        historicalLI.attr('data-id', countryName);
+        $(".historical-ul").prepend(historicalLI);
+       
 
         //latest country news
         var settings = {
@@ -113,8 +114,15 @@ $('#search-countries').on('submit', function(e){
             console.log(response);
             console.log(response.articles[0].link);
             console.log(response.articles[0].summary)
-
-            $("#news-articles").em
+            $("#news-articles").empty();
+            var newsArticles = $(`<li>`)
+            for (i = 4; i >= 0; i--) {
+                var results = response.articles[i].title
+                var links = response.articles[i].link
+                $("#news-articles").prepend(`<li><a href='${links}' target="_blank"> ${results} </a> </li>`)
+            }
+            
+            
             var article1El = $("<p>").text(response.articles[0].summary)
             var newDivArticle = $('<div>');
 
@@ -131,7 +139,11 @@ $('#search-countries').on('submit', function(e){
 
 
 
-
+//clicking historical button search brings up data
+$(document).on("click", ".historical-search", function(){
+    var previousResults = $(this).attr("data-id");
+    console.log(previousResults);
+})
 
 function chartInfo() {
     var keys = Object.keys(localStorage);
@@ -171,6 +183,24 @@ function chartInfo() {
                 'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
+        }, {
+            //dummy data - 
+            labels: ["confirmed_2", "critical_2", "deaths_2", "recoveries_2"],
+            data: [213123, 12364, 12312, 767],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)'
+                
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
         }]
     },
     options: {
@@ -180,10 +210,31 @@ function chartInfo() {
                     beginAtZero: true
                 }
             }]
-        }
+        }                   
     }
 });
 }
+
+
+function appendButton() {
+    //look at local storage
+    
+    keys = Object.keys(localStorage);
+    keysIndex = keys.length;
+    
+
+    for (i = 0; i < keysIndex; i++){
+        var storage = JSON.parse(localStorage.getItem(keysIndex.value))
+        historicalUL.prepend(`<li> ${storage} </li>`)
+        console.log(storage);
+        console.log('yellooooo')
+    }
+    //add button for each key !== "global"
+    //append buttons to UL -- 
+    
+}
+
+
 
 
     
