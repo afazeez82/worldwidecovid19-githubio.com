@@ -28,7 +28,7 @@
 }
 .news {
   grid-area: news;
-  background-color: slategrey;
+  background-color: snow;
   font-family: 'Heebo', sans-serif;
   color: black
   
@@ -38,6 +38,7 @@
 color: black;
 font-size: 20px;
 font-family: 'Fira Sans', sans-serif;
+background-color: snow;
 
 }
 .footer {
@@ -49,6 +50,7 @@ font-family: 'Fira Sans', sans-serif;
 
 h2 {
     text-align: center;
+    background-color: slategrey;
     color: black;
     font-family: 'Fira Sans', sans-serif;
 }
@@ -95,4 +97,11 @@ display: flex;
 #searchDiv  {
   font-size: 20px;
   color: black
+}
+
+.uk-button{
+background-color: #f13e3e;
+color: white;
+
+
 }
