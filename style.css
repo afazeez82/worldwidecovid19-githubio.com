@@ -2,7 +2,7 @@
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-areas: "hero hero hero"
+  grid-template-areas: 
   "drop location news"
   "drop location news"
   "footer footer footer";
@@ -13,19 +13,9 @@
   border: 1px solid #A1B3B1;
 }
 
-.hero {
-  grid-area: hero;
-  background-image: url("./assets/world.jpg");
-  background-repeat:no-repeat;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  -o-background-size:cover;
-  background-size:cover;
-  background-position:center;
-}
 .drop {
   grid-area: drop;
-  background-color: #BFC2FF;
+  background-color: slategrey;
   font-family: 'Heebo', sans-serif;
   
   
@@ -38,7 +28,7 @@
 }
 .news {
   grid-area: news;
-  background-color: #BFC2FF;
+  background-color: slategrey;
   font-family: 'Heebo', sans-serif;
   color: black    
   
@@ -61,7 +51,13 @@ font-family: 'Heebo', sans-serif;
 color: black
 } 
 #header {
-  background-color:#B34C4B !important;
+  background-image: url("./assets/world.jpg");
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
   
 }
 .uk-logo {
@@ -69,10 +65,21 @@ font-weight: bold;
 font-family: 'Heebo', sans-serif;
 color: black !important;
 font-size: 50px !important;
+
 }
 
 .uk-search-input {
 text-align: center !important;
 background-color: snow !important;
 color: slategray !important;
+}
+
+.overlay {
+background-color: rgba(26, 26, 26, 0.65);
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+display: flex;
+
 }
