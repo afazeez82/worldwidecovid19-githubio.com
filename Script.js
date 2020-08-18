@@ -1,14 +1,27 @@
 //adding the moment library for dates
 var currentDate = moment().format('L');
 
+function loadStorage() {
+    var keys = Object.keys(localStorage)
+    
+    var historicalLI = $(`<li>`);
+   
 
-// function loadStorage() {
-//     if (localStorage.getItem("global" != null)) {
-//         // var keyIndex = localStorage.length - 1;
-//         console.log(localStorage.getItem("global")
-//     }
-// }
+    for (i=0; i < keys.length; i++){
+        console.log(keys[i]);
+        if (keys[i] != 'global') {
+            historicalLI = $(`<li><button class="uk-button uk-button-default">${keys[i]}</button></li>`);
+            historicalLI.attr('data-id', keys[i]);
+            historicalLI.attr('class', "historicalCountryName");
+            $(".historical-ul").prepend(historicalLI);
+            
+        }
+       
+    }
+    
+}   
 
+loadStorage();
 
 function searchCountryName(countryName) {
 
@@ -46,7 +59,7 @@ function searchCountryName(countryName) {
         var keys = Object.keys(localStorage)
         var keysIndex = keys.length - 1;
         localStorage.setItem(countryName, JSON.stringify(response));
-       
+        // localStorage.setItem('country_' + keysIndex, JSON.stringify(response));
 
         //latest country news
         var settings = {
@@ -136,7 +149,7 @@ $('#search-countries').on('submit', function(e){
 
     
 searchCountryName(countryName)
-var historicalLI = $(`<li>${countryName}</li>`);
+var historicalLI = $(`<li><button class="uk-button uk-button-default">${keys[i]}</button></li>`);
 historicalLI.attr('data-id', countryName);
 historicalLI.attr('class', "historicalCountryName");
 $(".historical-ul").prepend(historicalLI);
@@ -156,8 +169,7 @@ $(document).on("click", ".historicalCountryName", function(){
 
 function chartInfo() {
     var keys = Object.keys(localStorage);
-    var keysIndex = keys.length - 2
-    console.log(keysIndex)
+   
     // var countryStorage = localStorage.getItem('country_' + keysIndex);
     var cases = JSON.parse(localStorage.getItem("global"));
 
