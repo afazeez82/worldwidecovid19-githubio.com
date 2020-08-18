@@ -25,6 +25,8 @@ API resources
         
 Image resources
 
+("https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max")
+
 ## Credits
 This assignment is provided by Trilogy Education Services. CSS and Skeletal HTML was provided by Trilogy Education Services. Code was structured based on in class activities and lectures, [MDN](https://developer.mozilla.org/en-US/) Reference Documents for JavaScript syntax, [JSHint](https://jshint.com/) for JavaScript validation, and various other online resources. 
 
