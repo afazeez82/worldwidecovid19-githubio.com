@@ -15,7 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Fonts-->    
     <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 </head>
 <div class="uk-navbar-container uk-navbar" id= "header">
     <div class="uk-navbar-center overlay">
@@ -30,6 +32,8 @@
                 <input id="selected-country" class="uk-search-input" type="search" placeholder="search by country">
             </form>
             <br>
+            <!-- historical searches here -->
+            <ul class="uk-list uk-list-striped historical-ul" id= searchDiv></ul>
             <!--previous searched should go here-->
         </div>
         <div class="location">
@@ -37,12 +41,12 @@
                 <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                     
                     <!--graph goes here-->
-                    <canvas width="600" height="400"></canvas>
+                    <canvas id="country-chart" width="600" height="400"></canvas>
                 </div>
                 <div>
                     <div id="country-data" class="uk-card-body">
                         <h3 class="uk-card-title">Country</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <p>Search for country to see related stats.</p>
                     </div>
                 </div>
             </div>
@@ -50,36 +54,27 @@
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                 <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                     <!--graph goes here-->
-                    
+                    <canvas id="global-chart" width="600" height="400"></canvas>
                     
                 </div>
-                <canvas id="global-chart" width="600" height="400"></canvas>
+                
                 <div>
                     <div id="world" class="uk-card-body">
                         <h3 class="uk-card-title">World</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
 
         </div>
         <div class="news">
+         <h2>
+            In the News
+        </h2> 
+            <ul id="news-articles" class="uk-list uk-list-striped">
             
-            <dl class="uk-description-list uk-description-list-divider">
-               <h2>
-                In the News
-            </h2> 
-            <!--fake titles to demonstrate how it SHOULD look-->
-                <dt></dt>
-                <dd>Puppies, Kitties "Probably Immune," says Some Guy in a Suit.</dd>
-                <dt></dt>
-                <dd>North Korea Reports Zero Cases, Which is Definitely True and Accurate. </dd>
-                <dt></dt>
-                <dd>Top Ten COVID-19 Preventing Lifehacks.</dd>
-                <dt></dt>
-                <dd>New Evidence Suggests that Toilet Paper Shortage was Related to COVID-19 panic.</dd>
-                <dt></dt>
-            </dl>               
+             
+            </ul>               
         </div>
         <div class="footer"> 
             <!-- You can use Open Graph tags to customize link previews.
