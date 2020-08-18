@@ -21,20 +21,20 @@ The html, css, and script files are all in the same folder. If they're kept in t
 
 ## Resources
 Twitter widget
-("https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
+* ("https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
 
 API resources
 
-("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-04-01&name=%3Crequired%3E"),
+* ("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-04-01&name=%3Crequired%3E"),
 
-("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-Aug-15&name=italy")
+* ("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-Aug-15&name=italy")
         
 Image resources
 
-("https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max")
+* ("https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max")
 
 ## Credits
-This assignment is provided by Trilogy Education Services. CSS and Skeletal HTML was provided by Trilogy Education Services. Code was structured based on in class activities and lectures, [MDN](https://developer.mozilla.org/en-US/) Reference Documents for JavaScript syntax, [JSHint](https://jshint.com/) for JavaScript validation, and various other online resources.
+This assignment is provided by Trilogy Education Services. Code was structured based on in class activities and lectures, [MDN](https://developer.mozilla.org/en-US/) Reference Documents for JavaScript syntax, [JSHint](https://jshint.com/) for JavaScript validation, and various other online resources.
 
 ## License
 
