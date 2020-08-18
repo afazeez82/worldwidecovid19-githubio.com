@@ -10,7 +10,7 @@
   grid-template-rows: 1fr 1fr 80px;
 }
 .uk-container-expand > div {
-  border: 1px solid #A1B3B1;
+  border: 1px solid #b3afa1;
 }
 
 .drop {
@@ -22,8 +22,8 @@
 }
 .location {
   grid-area: location;
-  background-color: #FFEBCD;
-  
+  background-color: white;
+
   
 }
 .news {
@@ -42,7 +42,7 @@ font-family: 'Fira Sans', sans-serif;
 }
 .footer {
   grid-area: footer;
-  background-color:#B34C4B;
+  background-color: blanchedalmond;
   text-align: center;
   
 }
@@ -54,7 +54,7 @@ h2 {
 }
 
 .uk-card {
-background-color: #FFEBCD;
+background-color: white;
 font-family: 'Heebo', sans-serif;
 color: black
 } 
