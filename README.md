@@ -13,7 +13,7 @@ The html, css, and script files are all in the same folder. If they're kept in t
 ## GLimpse of the app
 ![WorldWideCovid19 Tracker](./assets/WorldwideCOVID-19.gif)
 
-## Screenshots
+
 #### Full Page
  ![Full Page Display](./Assets/fullpage.png)
 
