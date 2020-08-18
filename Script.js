@@ -149,7 +149,7 @@ $('#search-countries').on('submit', function(e){
 
     
 searchCountryName(countryName)
-var historicalLI = $(`<li><button class="uk-button uk-button-default">${keys[i]}</button></li>`);
+var historicalLI = $(`<li><button class="uk-button uk-button-default">${countryName}</button></li>`);
 historicalLI.attr('data-id', countryName);
 historicalLI.attr('class', "historicalCountryName");
 $(".historical-ul").prepend(historicalLI);
