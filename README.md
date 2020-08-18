@@ -19,6 +19,10 @@ Twitter widget
 
 API resources
 
+("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-04-01&name=%3Crequired%3E"),
+
+("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-Aug-15&name=italy")
+        
 Image resources
 
 ## Credits
