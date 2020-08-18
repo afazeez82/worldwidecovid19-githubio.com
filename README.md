@@ -9,9 +9,15 @@ For this program we utilized two server-side APIs to acquire varying COVID-19 re
 ## Installation
 The html, css, and script files are all in the same folder. If they're kept in the same folder after cloning, the application will run. If the end user changes the file structure, index.html and  must be updated with the new file paths for script.js and style.css in relation to index.html.
 
+
+## GLimpse of the app
+![WorldWideCovid19 Tracker](./Assets/WorldwideCOVID-19.gif)
+
 ## Screenshots
 #### Full Page
  ![Full Page Display](./Assets/fullpage.png)
+
+
 
 ## Resources
 Twitter widget
