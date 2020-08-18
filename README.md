@@ -38,5 +38,5 @@ This assignment is provided by Trilogy Education Services. CSS and Skeletal HTML
 
 ## License
 
-[License](https://github.com/whackingMUFN/Homework/WeekFive/LICENSE.txt)
+[License](./LICENSE.txt)
 MIT &copy; 2020 Team Guava /(Anees Azeez, Kiki Peggs, Billy Sheehan, Jared Harms, and Calvin Freese)/
