@@ -14,11 +14,6 @@ The html, css, and script files are all in the same folder. If they're kept in t
 ![WorldWideCovid19 Tracker](./assets/WorldwideCOVID-19.gif)
 
 
-#### Full Page
- ![Full Page Display](./Assets/fullpage.png)
-
-
-
 ## Resources
 Twitter widget
 * ("https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false")
